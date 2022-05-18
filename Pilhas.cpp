@@ -66,7 +66,7 @@ void print(Lista* lista)
 	aux = lista;
 	
 	while(aux != NULL){
-		cout << "Prontuário: " << aux->pront << ", Nome: " << aux->nome << ", Salário: R$" << aux->salario << "." << endl;
+		cout << "Prontuário: " << aux->pront << ", Nome: " << aux->nome << ", Salário: R$" << fixed << setprecision(2) << aux->salario << endl;
 		
 		aux = aux->ant;
 	}
@@ -191,7 +191,7 @@ int main(int argc, char** argv)
 				if(buscado == NULL){
 					cout << endl << "Funcionário não encontrado." << endl << endl;
 				}else{
-					cout << endl << "Prontuário: " << buscado->pront << ", Nome: " << buscado->nome << ", Salário: R$" << buscado->salario << endl << endl;
+					cout << endl << "Prontuário: " << buscado->pront << ", Nome: " << buscado->nome << ", Salário: R$" << fixed << setprecision(2) << buscado->salario << endl << endl;
 				}
 				
 				key = menu();
@@ -202,7 +202,7 @@ int main(int argc, char** argv)
 				cout << endl;
 				
 				totalSalario = total(funcionarios);
-				cout << "Total de salários: R$" << totalSalario << "." << endl << endl;
+				cout << "Total de salários: R$" << fixed << setprecision(2) << totalSalario << endl << endl;
 				 
 				key = menu();
 				break;
